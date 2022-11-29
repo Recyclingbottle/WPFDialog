@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDialog"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="400" Width="300">
+    <Border Padding="5">
+        <DockPanel>
+            <Button Content="추가" Margin="10" DockPanel.Dock="Top" Click="OnAdd"/>
+            <TextBox x:Name="Result" IsReadOnly="True" AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Auto"
+                     Background="#eee"
+                     DockPanel.Dock="Bottom"/>
+        </DockPanel>
+    </Border>
 </Window>

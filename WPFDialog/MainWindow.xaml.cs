@@ -24,5 +24,21 @@ namespace WPFDialog
         {
             InitializeComponent();
         }
+
+        private void OnAdd(object sender, RoutedEventArgs e)
+        {
+            Test test = new Test();
+            if (test.ShowDialog() != true)
+                return;
+
+            Result.Text += $"{test.FName}의 주재료는 {test.Finde} 이고 {test.FCountry} {(HasJongsung(test.FName) ? "이" : "가")} 추가되었습니다.\n";
+        }
+        public bool HasJongsung(string str)
+        {
+            if (str.Length < 1)
+                return true;
+            char last = str[str.Length - 1];
+            return (last - 44032) % 28 != 0 ? true : false;
+        }
     }
 }
